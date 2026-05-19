@@ -66,35 +66,43 @@ st.markdown("""
     }
     
     /* KPI cards */
-    .kpi-card {
-        background: #FFFFFF;
-        border: 1px solid #e5e7eb;
-        border-radius: 10px;
-        padding: 20px;
-        text-align: left;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-        color: #1F2937 !important;
-    }
-    .kpi-card * {
-        color: inherit;
-    }
-    .kpi-label {
-        color: #6b7280;
-        font-size: 0.85rem;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-    }
-    .kpi-value {
-        color: #1B3A6B;
-        font-size: 2.2rem;
-        font-weight: 700;
-        margin: 8px 0 4px 0;
-    }
-    .kpi-delta {
-        color: #6b7280;
-        font-size: 0.85rem;
-    }
+        .kpi-card {
+            background: #FFFFFF !important;
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+            padding: 20px !important;
+            margin: 10px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            display: block !important;
+            width: 100% !important;
+            box-sizing: border-box;
+            color: #1F2937 !important;
+        }
+        .kpi-card * {
+            color: inherit;
+        }
+        .kpi-label {
+            color: #6B7280 !important;
+            font-size: 0.8rem !important;
+            font-weight: 600 !important;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .kpi-value {
+            color: #1B3A6B !important;
+            font-size: 2rem !important;
+            font-weight: 700 !important;
+            line-height: 1.2;
+            margin: 5px 0;
+            display: block;
+        }
+        .kpi-delta {
+            color: #6B7280 !important;
+            font-size: 0.8rem !important;
+            display: block;
+        }
     
     /* Finding cards */
     .finding-card {
@@ -266,7 +274,7 @@ if page == "🏠 Anasayfa":
     st.markdown("""
     <div class="nautiq-header">
         <h1>⚓ NAUTIQ | Yat Üretiminde Akıllı Tedarik Zekası</h1>
-        <p>End-to-end ML-powered supply chain decision support system</p>
+        <p>Yat üretiminde uçtan uca akıllı tedarik zekâsı</p>
     </div>
     """, unsafe_allow_html=True)
     
