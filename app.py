@@ -154,6 +154,13 @@ st.markdown("""
             color: #6B7280 !important;
             font-size: 0.8rem !important;
         }
+        /* Hide all horizontal dividers/lines */
+        hr {
+            display: none !important;
+        }
+        .section-divider {
+            display: none !important;
+        }
 </style>
 """, unsafe_allow_html=True)
 
