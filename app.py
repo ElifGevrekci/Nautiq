@@ -197,7 +197,11 @@ else:
     sim_matrix = np.array(sim_data)
     sim_index = list(range(len(sim_matrix)))
 
-sim_df = pd.DataFrame(sim_matrix, index=sim_index, columns=sim_index).astype(float)
+sim_df = pd.DataFrame(
+    sim_data["sim_matrix"],
+    index=sim_data["supplier_index"],
+    columns=sim_data["supplier_index"]
+)
 np.fill_diagonal(sim_df.values, np.nan)
 
 # ========================================
