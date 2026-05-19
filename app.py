@@ -186,12 +186,18 @@ cp = load_cp()
 genai = load_genai()
 clf, clf_meta, sim_data = load_models()
 
-# Build similarity DataFrame
-sim_df = pd.DataFrame(
-    sim_data["sim_matrix"],
-    index=sim_data["supplier_index"],
-    columns=sim_data["supplier_index"]
-)
+# Build similarity DataFrame (handle different pickle formats)
+if isinstance(sim_data, dict) and "sim_matrix" in sim_data:
+    sim_matrix = sim_data["sim_matrix"]
+    sim_index = sim_data["supplier_index"]
+elif isinstance(sim_data, pd.DataFrame):
+    sim_matrix = sim_data.values
+    sim_index = sim_data.index.tolist()
+else:
+    sim_matrix = np.array(sim_data)
+    sim_index = list(range(len(sim_matrix)))
+
+sim_df = pd.DataFrame(sim_matrix, index=sim_index, columns=sim_index).astype(float)
 np.fill_diagonal(sim_df.values, np.nan)
 
 # ========================================
