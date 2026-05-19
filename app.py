@@ -128,6 +128,32 @@ st.markdown("""
     /* Hide default Streamlit branding */
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
+    /* Force readable st.metric widgets */
+        [data-testid="stMetric"] {
+            background-color: #FFFFFF !important;
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+            padding: 15px !important;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            color: #1F2937 !important;
+        }
+        [data-testid="stMetric"] * {
+            color: #1F2937 !important;
+        }
+        [data-testid="stMetricLabel"] {
+            color: #6B7280 !important;
+            font-weight: 600 !important;
+            font-size: 0.85rem !important;
+        }
+        [data-testid="stMetricValue"] {
+            color: #1B3A6B !important;
+            font-size: 1.8rem !important;
+            font-weight: 700 !important;
+        }
+        [data-testid="stMetricDelta"] {
+            color: #6B7280 !important;
+            font-size: 0.8rem !important;
+        }
 </style>
 """, unsafe_allow_html=True)
 
